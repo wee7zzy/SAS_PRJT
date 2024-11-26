@@ -81,7 +81,27 @@ void afficher() {
         printf("---------------------------\n");
     }
 }
-
+void filtrer(){
+    int p;
+    printf("entrer la priorite voulait afficher(0 pour basse 1 pour haute) :");
+    scanf("%d",&p);
+    for(i=0;i<nmbr_taches;i++){
+        if (nmbr_taches==0 || (taches[i].priorite!=1 && taches[i].priorite!=0)) {
+            printf("Aucune tâche à afficher.\n");
+        }else{
+            if(taches[i].priorite==p){
+                printf("les taches avec haute priorite : \n %s \n %s \n %s \n %d \n",taches[i].titre,taches[i].description,taches[i].date_echeance,taches[i].priorite);
+            }
+            else {
+                if(taches[i].priorite==p){
+                
+                    printf("les taches avec basse priorite :\n %s \n %s \n %s \n %d \n",taches[i].titre,taches[i].description,taches[i].date_echeance,taches[i].priorite);
+                }
+            }
+            
+        }
+    }
+}
 int main() {
 
 return 0;
