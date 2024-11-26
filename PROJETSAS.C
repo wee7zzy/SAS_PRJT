@@ -102,7 +102,44 @@ void filtrer(){
         }
     }
 }
+
 int main() {
+int choix,prio=-1,index=-1;
+
+    do {
+        printf("\nGestion des tâches\n");
+        printf("1. Ajouter une tâche\n");
+        printf("2. Modifier une tâche\n");
+        printf("3. Supprimer une tâche\n");
+        printf("4. Afficher toutes les tâches\n");
+        printf("5. filtre les taches\n");
+        printf("6. Quitter\n");
+        printf("Choisissez une option : ");
+        scanf("%d", &choix);
+
+        switch(choix) {
+            case 1:
+                ajouter(prio);
+                break;
+            case 2:
+                modifier(index);
+                break;
+            case 3:
+                supprimer(index);
+                break;
+            case 4:
+                afficher();
+                break;
+            case 5:
+                filtrer();
+                break;
+            case 6:
+                printf("Au revoir !\n");
+                break;
+            default:
+                printf("Choix invalide, veuillez réessayer.\n");
+        }
+    } while(choix!=6);
 
 return 0;
 
