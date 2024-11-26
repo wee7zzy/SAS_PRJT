@@ -54,6 +54,21 @@ void modifier(int index) {
     scanf("%d", &prio);
     taches[index-1].priorite = (prio == 1) ? HAUTE : BASSE;
 }
+void supprimer(int index) {
+    printf("Supprimer une tâche :\n");
+    printf("Entrez l'index de la tâche à supprimer (1 à %d) : ",nmbr_taches);
+    scanf("%d", &index);
+
+    if (index < 0 || index >nmbr_taches) {
+        printf("Index invalide.\n");
+        return;
+    }
+    for (i=index;i<=nmbr_taches;i++) {
+        taches[i-1]=taches[i];
+    }
+    nmbr_taches--;
+    printf("supression avec succes \n");
+}
 
 int main() {
 
