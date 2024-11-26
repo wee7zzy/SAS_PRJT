@@ -31,6 +31,30 @@ void ajouter(int prio) {
     nmbr_taches++;
 }
 
+void modifier(int index) {
+    printf("Modifier une tâche :\n");
+    printf("Entrez l'index de la tâche à modifier (1 à %d) : ", nmbr_taches);
+    scanf("%d", &index);
+
+    if (index < 1 || index >nmbr_taches) {
+        printf("Index invalide.\n");
+        return;
+    }
+
+    printf("Modification de la tâche %d :\n", index);
+    printf("Nouveau titre : ");
+    getchar();
+    fgets(taches[index-1].titre,sizeof(taches[index-1].titre),stdin);
+    printf("Nouvelle description : ");
+    fgets(taches[index-1].description,sizeof(taches[index-1].description),stdin);
+    printf("Nouvelle date d'échéance (JJ/MM/AAAA) : ");
+    fgets(taches[index-1].date_echeance,sizeof(taches[index-1].date_echeance),stdin);
+    printf("Nouvelle priorité (1 = Haute, 0 = Basse) : ");
+    int prio;
+    scanf("%d", &prio);
+    taches[index-1].priorite = (prio == 1) ? HAUTE : BASSE;
+}
+
 int main() {
 
 return 0;
