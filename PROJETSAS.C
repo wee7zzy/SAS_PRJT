@@ -69,6 +69,18 @@ void supprimer(int index) {
     nmbr_taches--;
     printf("supression avec succes \n");
 }
+void afficher() {
+    if (nmbr_taches==0) {
+        printf("Aucune tâche à afficher.\n");
+    }
+    for (i=0;i<nmbr_taches;i++) {
+        printf("\nTitre: %s\n", taches[i].titre);
+        printf("Description: %s\n", taches[i].description);
+        printf("Date d'échéance: %s\n", taches[i].date_echeance);
+        printf("Priorité: %s\n", (taches[i].priorite==HAUTE) ? "Haute" : "Basse");
+        printf("---------------------------\n");
+    }
+}
 
 int main() {
 
